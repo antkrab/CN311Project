@@ -70,6 +70,8 @@ int main() {
     recvSoc2 = accept(soc2, (struct sockaddr *) &client_Addr, &client_Lenght);
 
     printf("starting....\n");
+
+    srand(time(0));
     
     pthread_create(&thread1, NULL, randLaddle, NULL);
     pthread_create(&thread2, NULL, randSnake, NULL);
