@@ -204,7 +204,7 @@ int main() {
 
 int rd(int x,int y){
     int range = y - x + 1;
-    srand(time(0));
+    // srand(time(0));
     int random_num = x + rand() % range;
     return random_num;
 }
@@ -235,7 +235,7 @@ void *randLaddle(){
             n = rd(21,42);
         }
         arr_Laddle[i] = n;
-        sleep(1);
+        // sleep(1);
     }
     pthread_exit(NULL);
 
@@ -252,7 +252,7 @@ void *randSnake(){
         }
 
         arr_Snake[i] = n;
-        sleep(1);
+        // sleep(1);
     }
     pthread_exit(NULL);
 }
@@ -267,7 +267,7 @@ void *randForward(){
             n = rd(1,10);
         }
         arr_Forward[i] = n;
-        sleep(1);
+        // sleep(1);
         
     }
     pthread_exit(NULL);
@@ -283,7 +283,7 @@ void *randReverse(){
             n = rd(1,26);
         }
         arr_Reverse[i] = n;
-        sleep(1);
+        // sleep(1);
         
     }
     pthread_exit(NULL);
