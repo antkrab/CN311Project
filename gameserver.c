@@ -31,8 +31,8 @@ int arr_Laddle[5];
 int arr_Snake[5];
 int arr_Forward[5];
 int arr_Reverse[5];
-int player_1 = 0;
-int player_2 = 0;
+int player_1 = 1;
+int player_2 = 1;
 int win = 0;
 int soc1,soc2,recvSoc1,recvSoc2;
 char buffer1[BUFFER_SIZE];
@@ -322,3 +322,4 @@ int check_Position(int p){
         }
     }
     return p;
+}
