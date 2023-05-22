@@ -62,6 +62,7 @@ int main () {
         sprintf(strDice, "%d", dice);
         send(soc1, strDice, 10, 0);
         memset(dummy,0x0,ARR_SIZE);
+        
         recv(soc1,buffer,ARR_SIZE,0);
         possition = strtol(buffer, NULL, 10);
         memset(buffer,0x0,ARR_SIZE);

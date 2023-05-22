@@ -43,6 +43,7 @@ int main () {
     show_Bord();
     printf("%s\n",laddle_And_Snake);
     printf("You here: %d\t player2 here: 1\n",prepos);
+
     while(1){
     printf("Your turn!!!!\n");
     printf("Enter: ");
@@ -52,13 +53,16 @@ int main () {
     sprintf(strDice, "%d", dice);
     send(soc1, strDice, 10, 0);
     memset(dummy,0x0,ARR_SIZE);
+
     recv(soc1,buffer,ARR_SIZE,0);
     possition = strtol(buffer, NULL, 10);
     memset(buffer,0x0,ARR_SIZE);
+
     send(soc1,"pass",10,0);
     recv(soc1,buffer,ARR_SIZE,0);
     strcpy(p2,buffer);
     memset(buffer,0x0,ARR_SIZE);
+    
     send(soc1,"pass",10,0);
     recv(soc1,buffer,ARR_SIZE,0);
     if(possition > 50){
@@ -99,6 +103,7 @@ int main () {
         break;
         }
     }
+
     close(soc1);                                   
     return 0;
 }

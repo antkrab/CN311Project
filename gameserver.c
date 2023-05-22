@@ -47,6 +47,7 @@ int main() {
     memset(buffer1,0x0,BUFFER_SIZE);
     memset(buffer2,0x0,BUFFER_SIZE);
     memset(dummy1,0x0,BUFFER_SIZE);
+    memset(dummy2,0x0,BUFFER_SIZE);
 
     soc1 = socket(AF_INET, SOCK_STREAM, 0);
     soc2 = socket(AF_INET, SOCK_STREAM, 0);
@@ -104,7 +105,6 @@ int main() {
     send(recvSoc2,"1",1,0);
     recv(recvSoc1,dummy1,BUFFER_SIZE,0);
     memset(dummy1,0x0,BUFFER_SIZE);
-
     recv(recvSoc2,dummy2,BUFFER_SIZE,0);
     memset(dummy2,0x0,BUFFER_SIZE);
 
@@ -126,6 +126,7 @@ int main() {
             char str_P2[10];
             sprintf(str_P1, "%d", player_1); 
             sprintf(str_P2, "%d", player_2); 
+
             send(recvSoc1,str_P1,10,0);
             recv(recvSoc1,dummy1,BUFFER_SIZE,0);
             memset(dummy1,0x0,BUFFER_SIZE);
@@ -133,8 +134,8 @@ int main() {
             send(recvSoc1,str_P2,10,0);
             recv(recvSoc1,dummy1,BUFFER_SIZE,0);
             memset(dummy1,0x0,BUFFER_SIZE);
-
             send(recvSoc1,"1",10,0);
+
             send(recvSoc2,"2",10,0);
             break;
         }
@@ -143,6 +144,7 @@ int main() {
             char str_P2[10];
             sprintf(str_P1, "%d", player_1); 
             sprintf(str_P2, "%d", player_2); 
+            
             send(recvSoc1,str_P1,10,0);
             recv(recvSoc1,dummy1,BUFFER_SIZE,0);
             memset(dummy1,0x0,BUFFER_SIZE);
